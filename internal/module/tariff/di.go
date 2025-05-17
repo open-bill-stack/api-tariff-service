@@ -2,7 +2,7 @@ package tariff
 
 import (
 	httpRouter "api-tariff-service/internal/service/fiber/router"
-	eventRouter "api-tariff-service/internal/service/kinkajou/router"
+	grpcRouter "api-tariff-service/internal/service/grpc/router"
 	"go.uber.org/fx"
 	"go.uber.org/zap"
 )
@@ -18,8 +18,8 @@ type HttpResult struct {
 
 	Router httpRouter.Router `group:"httpRoutes"`
 }
-type EventResult struct {
+type GrpcResult struct {
 	fx.Out
 
-	Router eventRouter.Router `group:"eventRoutes"`
+	Router grpcRouter.Router `group:"grpcRoutes"`
 }

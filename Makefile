@@ -15,7 +15,7 @@ all: generate
 
 # Ціль для генерації Go файлів з .proto
 generate:
-	protoc $(PROTO_PATH) $(GO_OUT) $(GO_OPT) $(GO_GRPC_OUT) $(GO_GRPC_OPT) proto/user/v1/*.proto
+	protoc $(PROTO_PATH) $(GO_OUT) $(GO_OPT) $(GO_GRPC_OUT) $(GO_GRPC_OPT) proto/tariff/v1/*.proto
 
 migrate-up:
 	@echo "Running migrations..."

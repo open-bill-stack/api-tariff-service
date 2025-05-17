@@ -8,7 +8,6 @@ import (
 	"api-tariff-service/internal/service/fiber/middleware"
 	"api-tariff-service/internal/service/grpc"
 	"api-tariff-service/internal/service/jwt"
-	"api-tariff-service/internal/service/kinkajou"
 	"api-tariff-service/internal/service/logger"
 	"api-tariff-service/internal/service/rabbitmq"
 	"github.com/spf13/cobra"
@@ -31,11 +30,10 @@ func Run(cmd *cobra.Command) {
 		tariff.Module,
 
 		rabbitmq.Module,
-		kinkajou.Module,
 		// fiber
 		fiber.Module,
 
 		// grpc
-		grpc.Module,
+		grpc.ModuleServer,
 	).Run()
 }
