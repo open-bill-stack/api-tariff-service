@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.19.6
-// source: user/v1/user.proto
+// source: tariff/v1/tariff.proto
 
 package protoc
 
@@ -24,14 +24,14 @@ const (
 // Запит перевірки по ID
 type ExistsByIDRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TariffId      string                 `protobuf:"bytes,1,opt,name=tariff_id,json=tariffId,proto3" json:"tariff_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ExistsByIDRequest) Reset() {
 	*x = ExistsByIDRequest{}
-	mi := &file_user_v1_user_proto_msgTypes[0]
+	mi := &file_tariff_v1_tariff_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +43,7 @@ func (x *ExistsByIDRequest) String() string {
 func (*ExistsByIDRequest) ProtoMessage() {}
 
 func (x *ExistsByIDRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[0]
+	mi := &file_tariff_v1_tariff_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,12 +56,12 @@ func (x *ExistsByIDRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistsByIDRequest.ProtoReflect.Descriptor instead.
 func (*ExistsByIDRequest) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{0}
+	return file_tariff_v1_tariff_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ExistsByIDRequest) GetUserId() string {
+func (x *ExistsByIDRequest) GetTariffId() string {
 	if x != nil {
-		return x.UserId
+		return x.TariffId
 	}
 	return ""
 }
@@ -76,7 +76,7 @@ type ExistsByIDResponse struct {
 
 func (x *ExistsByIDResponse) Reset() {
 	*x = ExistsByIDResponse{}
-	mi := &file_user_v1_user_proto_msgTypes[1]
+	mi := &file_tariff_v1_tariff_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -88,7 +88,7 @@ func (x *ExistsByIDResponse) String() string {
 func (*ExistsByIDResponse) ProtoMessage() {}
 
 func (x *ExistsByIDResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[1]
+	mi := &file_tariff_v1_tariff_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -101,7 +101,7 @@ func (x *ExistsByIDResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistsByIDResponse.ProtoReflect.Descriptor instead.
 func (*ExistsByIDResponse) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{1}
+	return file_tariff_v1_tariff_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ExistsByIDResponse) GetExists() bool {
@@ -111,39 +111,39 @@ func (x *ExistsByIDResponse) GetExists() bool {
 	return false
 }
 
-var File_user_v1_user_proto protoreflect.FileDescriptor
+var File_tariff_v1_tariff_proto protoreflect.FileDescriptor
 
-const file_user_v1_user_proto_rawDesc = "" +
+const file_tariff_v1_tariff_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\",\n" +
-	"\x11ExistsByIDRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\",\n" +
+	"\x16tariff/v1/tariff.proto\x12\ttariff.v1\"0\n" +
+	"\x11ExistsByIDRequest\x12\x1b\n" +
+	"\ttariff_id\x18\x01 \x01(\tR\btariffId\",\n" +
 	"\x12ExistsByIDResponse\x12\x16\n" +
-	"\x06exists\x18\x01 \x01(\bR\x06exists2T\n" +
-	"\vUserService\x12E\n" +
+	"\x06exists\x18\x01 \x01(\bR\x06exists2Z\n" +
+	"\rTariffService\x12I\n" +
 	"\n" +
-	"ExistsByID\x12\x1a.user.v1.ExistsByIDRequest\x1a\x1b.user.v1.ExistsByIDResponseB/Z-api-user-service/internal/service/grpc/protocb\x06proto3"
+	"ExistsByID\x12\x1c.tariff.v1.ExistsByIDRequest\x1a\x1d.tariff.v1.ExistsByIDResponseB1Z/api-tariff-service/internal/service/grpc/protocb\x06proto3"
 
 var (
-	file_user_v1_user_proto_rawDescOnce sync.Once
-	file_user_v1_user_proto_rawDescData []byte
+	file_tariff_v1_tariff_proto_rawDescOnce sync.Once
+	file_tariff_v1_tariff_proto_rawDescData []byte
 )
 
-func file_user_v1_user_proto_rawDescGZIP() []byte {
-	file_user_v1_user_proto_rawDescOnce.Do(func() {
-		file_user_v1_user_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)))
+func file_tariff_v1_tariff_proto_rawDescGZIP() []byte {
+	file_tariff_v1_tariff_proto_rawDescOnce.Do(func() {
+		file_tariff_v1_tariff_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_tariff_v1_tariff_proto_rawDesc), len(file_tariff_v1_tariff_proto_rawDesc)))
 	})
-	return file_user_v1_user_proto_rawDescData
+	return file_tariff_v1_tariff_proto_rawDescData
 }
 
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_user_v1_user_proto_goTypes = []any{
-	(*ExistsByIDRequest)(nil),  // 0: user.v1.ExistsByIDRequest
-	(*ExistsByIDResponse)(nil), // 1: user.v1.ExistsByIDResponse
+var file_tariff_v1_tariff_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_tariff_v1_tariff_proto_goTypes = []any{
+	(*ExistsByIDRequest)(nil),  // 0: tariff.v1.ExistsByIDRequest
+	(*ExistsByIDResponse)(nil), // 1: tariff.v1.ExistsByIDResponse
 }
-var file_user_v1_user_proto_depIdxs = []int32{
-	0, // 0: user.v1.UserService.ExistsByID:input_type -> user.v1.ExistsByIDRequest
-	1, // 1: user.v1.UserService.ExistsByID:output_type -> user.v1.ExistsByIDResponse
+var file_tariff_v1_tariff_proto_depIdxs = []int32{
+	0, // 0: tariff.v1.TariffService.ExistsByID:input_type -> tariff.v1.ExistsByIDRequest
+	1, // 1: tariff.v1.TariffService.ExistsByID:output_type -> tariff.v1.ExistsByIDResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -151,26 +151,26 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_user_v1_user_proto_init() }
-func file_user_v1_user_proto_init() {
-	if File_user_v1_user_proto != nil {
+func init() { file_tariff_v1_tariff_proto_init() }
+func file_tariff_v1_tariff_proto_init() {
+	if File_tariff_v1_tariff_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_tariff_v1_tariff_proto_rawDesc), len(file_tariff_v1_tariff_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_user_v1_user_proto_goTypes,
-		DependencyIndexes: file_user_v1_user_proto_depIdxs,
-		MessageInfos:      file_user_v1_user_proto_msgTypes,
+		GoTypes:           file_tariff_v1_tariff_proto_goTypes,
+		DependencyIndexes: file_tariff_v1_tariff_proto_depIdxs,
+		MessageInfos:      file_tariff_v1_tariff_proto_msgTypes,
 	}.Build()
-	File_user_v1_user_proto = out.File
-	file_user_v1_user_proto_goTypes = nil
-	file_user_v1_user_proto_depIdxs = nil
+	File_tariff_v1_tariff_proto = out.File
+	file_tariff_v1_tariff_proto_goTypes = nil
+	file_tariff_v1_tariff_proto_depIdxs = nil
 }

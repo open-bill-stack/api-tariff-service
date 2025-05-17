@@ -22,13 +22,7 @@ type ParamsChannel struct {
 	Config   *config.Config
 	AQMPConn *amqp.Connection
 }
-type ParamsQueue struct {
-	fx.In
 
-	Log         *zap.Logger
-	Config      *config.Config
-	AQMPChannel *amqp.Channel
-}
 type ParamsAMQPRun struct {
 	fx.In
 
@@ -51,15 +45,12 @@ type ResultChannel struct {
 	fx.Out
 	AQMPChannel *amqp.Channel
 }
-type ResultQueue struct {
-	fx.Out
-	AQMPQueue *amqp.Queue
-}
 
 func NewAMQP(p ParamsAMQP) (ResultAMQP, error) {
 	conn, err := amqp.Dial(p.Config.AMQP.Url)
 	if err != nil {
-		log.Panicf("Failed to connect to RabbitMQ: %s", err)
+		log.Error("Failed to connect to RabbitMQ: %s", err)
+		panic(err)
 	}
 	return ResultAMQP{
 		AQMPConn: conn,
@@ -68,7 +59,8 @@ func NewAMQP(p ParamsAMQP) (ResultAMQP, error) {
 func NewChannel(p ParamsChannel) (ResultChannel, error) {
 	ch, err := p.AQMPConn.Channel()
 	if err != nil {
-		log.Panicf("Failed to load channel to RabbitMQ: %s", err)
+		log.Error("Failed to load channel to RabbitMQ: %s", err)
+		panic(err)
 	}
 
 	return ResultChannel{

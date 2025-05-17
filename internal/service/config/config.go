@@ -14,6 +14,7 @@ import (
 
 type AppConfig struct {
 	HttpPort int `mapstructure:"APP_HTTP_PORT"`
+	GrpcPort int `mapstructure:"APP_GRPC_PORT"`
 }
 type ServiceConfig struct {
 	UserGrpcAddress string `mapstructure:"SERVICE_USER_GRPC_ADDRESS"`
